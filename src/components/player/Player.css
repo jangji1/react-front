@@ -1,0 +1,294 @@
+/*자막 Styling*/
+/*
+::cue {
+
+  background-color: transparent;
+  color: white;
+}
+*/
+
+/*video*/
+.custom-video .hide {display: none !important;}
+.custom-video .video-header {z-index: 2147483647;position: absolute;top: 0;left: 0;width: 100%;height: 64px;background-color: rgba(33, 37, 41, 0.9);}
+.custom-video .video-header h1 {margin: 0;font-size: 24px;font-weight: bold;color: #dee2e6;}
+.custom-video .video-header h1 span {padding-left: 22px;}
+
+.custom-video {font-family: 'NanumSquare', sans-serif;overflow:hidden;position: fixed !important;background:#17191a !important;border:0 none !important;z-index: 2147483647;}
+.custom-video.origin {left:0 !important;top:0 !important;width:calc(100%) !important;height:calc(100%) !important;}
+.custom-video.miniview {left:0;top:0;width: 200px;height:113px;}
+.custom-video.control-hide .mycontrols .main-control {display: none;}
+.custom-video video {display: block;width: 100%; height: 100%;}
+.custom-video.full video {object-fit: cover;}
+.custom-video::full-screen {width: 100%;height: 100%;}
+.custom-video::-moz-full-screen {width: 100%;height: 100%;}
+.custom-video::-webkit-full-screen {width: 100%;height: 100%;}
+.custom-video .mycontrols {font-family: 'NanumGothic', sans-serif;}
+.custom-video .mycontrols .main-control {z-index: 2147483647;position: absolute;bottom: 0;left: 0;right: 0;color: white;font-size: .8em;width: 100%;min-height: 40px;padding: 0;}
+.custom-video .mycontrols .main-control .control-box {height: 70px;line-height: 70px;background-color: rgba(33, 37, 41, 0.7);}
+.custom-video .mycontrols .main-control .control-box .left {position: absolute;left: 0;width: 300px;font-weight: 700;font-size:18px;}
+.custom-video .mycontrols .main-control .control-box .center {position: absolute;left: 300px;right: 300px;text-align: center;}
+.custom-video .mycontrols .main-control .control-box .right {position: absolute;right: 0;width: 300px;text-align: right;}
+.custom-video .mycontrols .sub-control {z-index:2147483647;position: absolute;top: 0;right: 0;padding: 10px 1%;}
+
+.custom-video .current-time {margin-left: 30px;color: #5da9ff;}
+.custom-video .current-time:after {content: '|';padding: 0 9px;color: #495057;}
+.custom-video .total-time {color: #ced4da;}
+
+.custom-video .speed-control {font-family: 'NanumGothic', sans-serif;z-index: 2147483647;position: absolute;top: 50%;left: 20px;display: table;width: 64px;height: 225px;margin-top: -112.5px;border-radius: 32px;background: rgba(33, 37, 41, 0.9);color: #fff;font-weight: 700;text-align: center;}
+.custom-video .speed-control .inner {display: table-cell; vertical-align: middle;}
+.custom-video .speed-control .inner .btn-faster {position: absolute;top: 0;left: 0;width:100%;height:61px;background-size: 16px 9px;background-position: center center;}
+.custom-video .speed-control .inner .btn-slower {position: absolute;bottom: 0;left: 0;width:100%;height:61px;background-size: 16px 9px;background-position: center center;}
+.custom-video .speed-control .inner .text {font-size: 18px;line-height: 1.5em;}
+
+.custom-video .vol-control {
+    z-index: 2147483647;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 276px;
+    height: 173px;
+    margin-left:-138px;
+    margin-top: -86.5px;
+    border-radius: 30px;
+    color: #fff;
+    background: rgba(33, 37, 41, 0.9) url('/img/player/ico-volume.png') no-repeat center 42px;
+    background-size: 62.5px 44.5px;
+    opacity: 0;
+}
+.custom-video .vol-control.active {
+    opacity: 1;
+}
+.custom-video .vol-control .inner {margin-top: 121.5px;text-align: center;}
+.custom-video .vol-control .inner progress {
+    width: 161.5px;
+	height: 9px;
+	-webkit-appearance: none;
+	border: none;
+    vertical-align: middle;
+}
+.custom-video .vol-control .inner progress::-webkit-progress-bar {background: rgba(248, 249, 250, 0.3);border-radius: 9px;}
+.custom-video .vol-control .inner progress::-webkit-progress-value {border-radius: 9px;background: #5da9ff;}
+.custom-video .vol-control .inner .text {padding-left: 19px;font-size: 18px;}
+
+.custom-video .video-nav {z-index: 2147483647;position: absolute;right: 0;top: 0;height: 100%;}
+.custom-video .video-nav .video-nav-cont {width: 349px;height: 100%;border: 2px solid #495057;border-top: none;border-bottom: none}
+.custom-video .video-nav .video-nav-cont .video-nav-header {display: table;width: 286px;height: 82px;padding: 0 25px 0 38px;background: #3f454c;}
+.custom-video .video-nav .video-nav-cont .video-nav-header .inner {display: table-cell;vertical-align: middle;}
+.custom-video .video-nav .video-nav-cont .video-nav-header .inner h1 {margin: 0;color: rgba(248, 249, 250, 0.4);font-size: 16px;}
+.custom-video .video-nav .video-nav-cont .video-nav-header .inner h1 .teacher {padding-bottom: 9px;}
+.custom-video .video-nav .video-nav-cont .video-nav-list {overflow: auto;width: 309px;height: calc(100% - 82px);padding: 0 0 0 40px;background: #343a40;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul {list-style-type: none;margin: 0;padding: 0;font-weight: bold;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li {padding-top: 30px;font-size: 24px;color: #f8f9fa;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li span {display: inline-block;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li {padding-top: 30px;font-size: 18px;color: #f8f9fa;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li span {padding-left: 25px;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li i:after {content: '|';padding: 0 6px;color: rgba(248, 249, 250, 0.2);}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li ul {margin-top: 17px;border-top: 2px solid rgba(73, 80, 87, 0.5);}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li ul li {padding: 0;border-bottom: 2px solid rgba(73, 80, 87, 0.5);background: url('/img/player/ico-play-off.png') no-repeat 39px 15px; background-size: 19px;font-size: 17px;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li ul li a {display:block;padding: 15px 0 15px 75px;color: rgba(248, 249, 250, 0.6);text-decoration: none;font-weight: bold;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li ul li.active {background: rgba(33, 37, 41, 0.25) url('/img/player/ico-play-on.png') no-repeat 15px; background-size: 19px;}
+.custom-video .video-nav .video-nav-cont .video-nav-list ul li ul li ul li.active a {color: #5da9ff;}
+.custom-video .video-nav .btn-nav {position: absolute;top: 0;left: -64px;}
+.custom-video .video-nav i {font-style: normal;}
+
+/*button*/
+.custom-video button:focus {outline: 0;}
+.custom-video .btn {
+  display: inline-block;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: none;
+  font-size:0;
+}
+
+.custom-video .btn-back {width: 64px;height: 64px;background: url(/img/player/btn-back.png) no-repeat center center;background-size: 24px;}
+.custom-video .btn-back:active {background-color: #1d2023;opacity: 0.5;}
+.custom-video .btn-repeat {width: 34px;height: 32.5px;background: url('/img/player/btn-repeat.png') no-repeat;background-size: contain;margin-left: 22px;}
+.custom-video .btn-repeat:active, .btn-repeat.active {background-image: url('/img/player/btn-repeat-active.png');}
+.custom-video .btn-playpause {width: 26px;height: 30px;margin:0 55px;}
+.custom-video .btn-playpause.icon-play {background: url(/img/player/btn-play.png) no-repeat;background-size: contain;}
+.custom-video .btn-playpause.icon-play:active {background-image: url(/img/player/btn-play-active.png);}
+.custom-video .btn-playpause.icon-pause {background: url(/img/player/btn-pause.png) no-repeat;background-size: contain;}
+.custom-video .btn-playpause.icon-pause:active {background-image: url(/img/player/btn-pause-active.png);}
+.custom-video .btn-forward {width: 18px;height: 18px;background: url('/img/player/btn-forward.png') no-repeat;background-size: contain;}
+.custom-video .btn-forward:active {background-image: url('/img/player/btn-forward-active.png');}
+.custom-video .btn-rewind {width: 18px;height: 18px;background: url('/img/player/btn-rewind.png') no-repeat;background-size: contain;}
+.custom-video .btn-rewind:active {background-image: url('/img/player/btn-rewind-active.png');}
+.custom-video .btn-capture {width: 31px;height: 31px;background: url('/img/player/btn-capture.png') no-repeat;background-size: contain;margin:0 20px 0 0;}
+.custom-video .btn-capture:active {background-image: url('/img/player/btn-capture-active.png');}
+.custom-video .btn-slower {width: 16px;height: 9px;background: url('/img/player/btn-slower.png') no-repeat;background-size: contain;border-radius: 32px;}
+.custom-video .btn-slower:active {background-color: #1d2023;opacity: 0.7;}
+.custom-video .btn-faster {width: 16px;height: 9px;background: url('/img/player/btn-faster.png') no-repeat;background-size: contain;border-radius: 32px;}
+.custom-video .btn-faster:active {background-color: #1d2023;opacity: 0.7;}
+.custom-video .btn-full-normal {width: 26px;height: 26px;margin:0 20px 0 0;}
+.custom-video .btn-full-normal.icon-normal {background: url('/img/player/btn-normal.png') no-repeat;background-size: contain;}
+.custom-video .btn-full-normal.icon-normal:active {background-image: url('/img/player/btn-normal-active.png');}
+.custom-video .btn-full-normal.icon-full {background: url('/img/player/btn-full.png') no-repeat;background-size: contain;}
+.custom-video .btn-full-normal.icon-full:active {background-image: url('/img/player/btn-full-active.png');}
+.custom-video .btn-nav {width: 64px;height: 64px;background: url('/img/player/btn-nav-open.png') no-repeat center center ;background-size: 24px 18px;}
+.custom-video .btn-nav:active {background-color: #1d2023;opacity: 0.7;}
+.custom-video .btn-nav.open {background: url('/img/player/btn-nav-close.png') no-repeat center center ;background-size: 24.5px 19.5px;}
+
+/*seeker*/
+.custom-video .seeker {position: relative;width: 100%;display: block;}
+.custom-video .seekbar {position: relative;width: 100%;background-color: transparent;}
+.custom-video .seek-label {
+    display: inline-block;
+    position: absolute;
+    background: rgba(33, 37, 41, 0.9);
+    width: 80px; 
+    height: 40px;
+    text-align: center; 
+    color: white; 
+    border-radius: 10px;
+    bottom: 27px;
+    left: -5px;
+    margin-left: -1%;
+    transition: opacity 2s;
+    opacity: 0;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: bold;
+}
+.custom-video .seek-label:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid rgba(33, 37, 41, 0.9);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+}
+.custom-video .seek-label.active {
+    transition: none;
+    opacity: 1;
+}
+.custom-video .seek-repeata, .seek-repeatb {display: inline-block;position: absolute;left: -5px;bottom: 14px;margin-left: -1%;width: 25.5px;height: 35px;}
+.custom-video .seek-repeata {background: url('/img/player/ico-repeata.png') no-repeat;background-size: contain;}
+.custom-video .seek-repeatb {background: url('/img/player/ico-repeatb.png') no-repeat;background-size: contain;}
+
+/*range bar styling*/
+.custom-video input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    padding: 0;
+    margin: 0;
+    vertical-align: bottom;
+    background-color: rgba(255, 255, 255, 0.4);
+    background-image: linear-gradient(#5da9ff, #5da9ff);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+
+    /*required for proper track sizing in FF*/
+    width: 100%;
+}
+
+.custom-video input[type=range]:active {border-color: none;}
+
+.custom-video input[type=range]:focus {outline: none;}
+
+.custom-video input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    background: none;
+    border: none;
+}
+.custom-video input[type=range]:active::-webkit-slider-runnable-track {
+    height: 7px;
+}
+.custom-video input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+.custom-video input[type=range]:active::-webkit-slider-thumb {
+    border-radius: 50%;
+    background: #5da9ff;
+    border: 1px solid #5da9ff;
+    border-radius: 50%;
+    margin-top: -7px;
+}
+.custom-video input[type=range]:focus::-webkit-slider-runnable-track {
+    background: none;
+}
+
+.custom-video input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    background: none;
+    border: none;
+}
+.custom-video input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+.custom-video input[type=range]:active::-moz-range-thumb {
+    border-radius: 50%;
+    background: #5da9ff;
+    border: 1px solid #5da9ff;
+    border-radius: 50%;
+    margin-top: -7px;
+}
+
+
+/*hide the outline behind the border*/
+.custom-video input[type=range]:-moz-focusring {
+    outline: 1px solid #5da9ff;
+    outline-offset: -1px;
+}
+
+.custom-video input[type=range]::-ms-track {
+    width: 100%;
+    height: 4px;
+    background: none;
+    border: none;
+}
+.custom-video input[type=range]::-ms-fill-lower {
+    background:  none;
+}
+.custom-video input[type=range]::-ms-fill-upper {
+    background:  none;
+}
+.custom-video input[type=range]::-ms-thumb {
+    -webkit-appearance: none;
+    border: none;
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+}
+.custom-video input[type=range]:active::-ms-thumb {
+    border-radius: 50%;
+    background: #5da9ff;
+    border: 1px solid #5da9ff;
+    border-radius: 50%;
+    margin-top: -7px;
+}
+
+/*hide controls from shadow DOM in webkit browsers*/
+/* hides controls only in fullscreen, but shows them in normal screen even if controls is set to false*/
+/*the most specific pseudo-element to target video controls on full screen*/
+.custom-video video::-webkit-media-controls-enclosure {
+  	display: none !important;
+}

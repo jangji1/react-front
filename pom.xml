@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sigong</groupId>
+	<artifactId>front</artifactId>
+	<name>Middle_FRONT_REACT</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	
+	<distributionManagement>
+	    <site>
+	        <id>${siteId}</id>
+	        <url>${siteUrl}</url>
+	    </site>
+	</distributionManagement>
+
+	
+	<profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+            <properties>
+                <environment>local</environment>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <environment>dev</environment>
+                <siteId>devWas</siteId>
+                <siteUrl>scp://dev.mid-home01.sigongedu.com/data/web/schooling-api</siteUrl>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <environment>prod</environment>
+                <siteId>prodWas</siteId>
+                <siteUrl>scp://dev.mid-home01.sigongedu.com/data/web/schooling-api</siteUrl>
+            </properties>
+        </profile>
+    </profiles>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>rename-file</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>rename</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>app/config/${environment}.config.js</sourceFile>
+                            <destinationFile>app/config/config.js</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-site-plugin</artifactId>
+			    <version>3.6</version>
+	            <configuration>
+	                <inputDirectory>${project.basedir}</inputDirectory>
+	            </configuration>
+	            <dependencies>
+	                <dependency>
+	                    <groupId>org.apache.maven.wagon</groupId>
+					    <artifactId>wagon-ssh</artifactId>
+					    <version>2.12</version>
+	                </dependency>
+	            </dependencies>
+	        </plugin>
+        </plugins>
+    </build>
+</project>

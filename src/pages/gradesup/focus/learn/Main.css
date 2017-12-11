@@ -1,0 +1,38 @@
+/*common*/
+.gradesup h1 {font-size:1em;}
+.gradesup p {color: #555;}
+.gradesup button::-moz-focus-inner {border: 0;padding: 0;}
+.gradesup .btn {
+  display: inline-block;
+  padding: 5px 7px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.gradesup .btn.active {
+  color: #fff;
+  background-color: #286090;
+  border-color: #204d74;
+}
+.gradesup .hide {display: none;}
+
+/*layout*/
+.gradesup {margin: 0;padding: 0;overflow: hidden;height: 100%; max-height: 100%;}
+.gradesup main {position: fixed;top: 50px;right: 150px;left: 0;bottom: 50px;overflow: auto;background: #fff;border:0 none !important}
+.gradesup #header {position: absolute;top: 0;left: 0;width: 100%;height: 50px; overflow: hidden;background: #BCCE98;}
+.gradesup #nav {position: absolute; top: 50px; right: 0;bottom: 0;width: 150px;overflow: auto;background: #DAE9BC;}
+.gradesup #footer {position: absolute;bottom: 0;right: 150px;left: 0;height: 50px;overflow: hidden;background: #BCCE98;text-align: center;}
+.gradesup #logo {padding:10px;}
+.gradesup .innertube {margin: 15px;}
+.gradesup nav ul {list-style-type: none;margin: 0;padding: 0;}
+.gradesup nav ul a {color: darkgreen;text-decoration: none;}

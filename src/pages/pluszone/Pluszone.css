@@ -1,0 +1,185 @@
+.pluszone .hide {
+    display: none;
+}
+
+.pluszone .btn_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 64px;
+    background: url('/img/btn/btn_pluszone_close.png') no-repeat center center;
+    background-size: 24px;
+}
+.pluszone .btn_close:active {
+    background-color: #17191a;
+    opacity: 0.5;
+}
+.pluszone .main {
+    position: fixed;
+    width: calc(100% - 220px - 90px);
+    height: calc(100% - 82.5px - 82.5px);
+    padding: 82.5px 220px 82.5px 90px;
+    background: #343a40 url('/img/bg/bg_pluszone_main.png') repeat-x;
+    background-size: 1280px 752px;
+}
+.pluszone .main .inner {
+    position: relative;
+    height: 100%;
+    border-radius: 15px;
+    background: #f1f3f5;
+}
+.pluszone .main .inner .mark {
+    position: absolute;
+    top: -30.5px;
+    right: 70px;
+    width: 129px;
+    height: 64px;
+    padding: 0 12.5px 0 3.5px;
+    line-height: 64px;
+    font-size: 0;
+    color: #f8f9fa;
+    text-align: center;
+    background: url('/img/bg/bg_pluszone_mark.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .main .inner .lecture {
+    margin: 0;
+    padding: 51px 82px 0 0;
+    font-size: 18px;
+    text-align: right;
+}
+.pluszone .main .inner .course {
+    position: absolute;
+    top: 51.4%;
+    left: 23.5%;
+    right: 22.3%;
+}
+.pluszone .main .inner .course i {
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    font-style: normal;
+    font-size: 90px;
+    color: #2458c2;
+    padding-bottom: 25px;
+    background: url('/img/bg/bg_pluszone_line.png') 6px 82.1% no-repeat;
+    background-size: 40px 8px;
+}
+.pluszone .main .inner .course i .courseNum {
+    padding-right: 8.5px;
+}
+.pluszone .main .inner .course i .courseNumTxt {
+    font-size: 29px;
+}
+.pluszone .main .inner .course h1 {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-weight: 900;
+    font-size: 25px;
+    color: #212529;
+    line-height: 1.6em;
+}
+.pluszone .main .inner .course .goal:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 51.5px;
+    background: url('/img/ico/ico_goal.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .main .inner .course .goal {
+    position: relative;
+    margin-top: 18px;
+    padding-left: 52px;
+    font-size: 18px;
+    color: #4d92ee;
+    line-height: 1.6em;
+}
+.pluszone .main .btn_next {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 82px;
+    height: 45px;
+    background: url('/img/btn/btn_pluszone_main_next.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .main .btn_next:active {
+    background: url('/img/btn/btn_pluszone_main_next_active.png') no-repeat;
+    background-size: contain;
+}
+
+
+.pluszone .content #header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    background: #343a40 url('/img/bg/bg_pluszone_content_header.png') 100% 0 no-repeat;
+    background-size: 1280px 64px;
+}
+.pluszone .content #header h1 {
+    margin: 20px 20px 0;
+    font-size: 24px;
+    color: #f8f9fa;
+    font-weight: 900;
+}
+.pluszone .content main {
+    position: fixed;
+    top: 64px;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    overflow: auto; 
+}
+.pluszone .content #footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+}
+.pluszone .content #footer .btn_prev {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 82px;
+    height: 45px;
+    background: url('/img/btn/btn_pluszone_content_prev.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .content #footer .btn_prev:active {
+    background: url('/img/btn/btn_pluszone_content_prev_active.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .content #footer .btn_next {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 82px;
+    height: 45px;
+    background: url('/img/btn/btn_pluszone_content_next.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .content #footer .btn_next:active {
+    background: url('/img/btn/btn_pluszone_content_next_active.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .content #footer .btn_play {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 116px;
+    height: 45px;
+    background: url('/img/btn/btn_pluszone_content_play.png') no-repeat;
+    background-size: contain;
+}
+.pluszone .content #footer .btn_play:active {
+    background: url('/img/btn/btn_pluszone_content_play_active.png') no-repeat;
+    background-size: contain;
+}
